@@ -17,7 +17,7 @@ const Coin = () => {
     const fetchCoinData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3001/api/coins/${coinId}?currency=${currency.name}`
+          `https://crytpo-wave-backend.onrender.com/api/coins/${coinId}?currency=${currency.name}`
         );
         const data = await response.json();
         setCoinData(data);
@@ -29,7 +29,7 @@ const Coin = () => {
     const fetchHistoryData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3001/api/coins/${coinId}/history?currency=${currency.name}`
+          `https://crytpo-wave-backend.onrender.com/api/coins/${coinId}/history?currency=${currency.name}`
         );
         const data = await response.json();
         setHistoryData(data);
