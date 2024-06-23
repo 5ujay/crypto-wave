@@ -19,7 +19,7 @@ export const CoinContextProvider = ({ children }) => {
   const fetchCoinData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/api/coins?currency=${currency.name}`
+        `https://crytpo-wave-backend.onrender.com/api/coins?currency=${currency.name}`
       );
       setAllCoin(response.data);
       console.log(response.data);
