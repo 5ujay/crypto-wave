@@ -1,9 +1,13 @@
 import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config(); // Load environment variables from .env file
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const API_KEY = process.env.CYPTODATA_COINGECKO_API_KEY;
 
 app.use(express.json());
 app.use(cors());
@@ -16,7 +20,7 @@ app.get("/api/coins", async (req, res) => {
   try {
     const response = await fetch(url, {
       headers: {
-        "x-cg-demo-api-key": "CG-TLHDXVQSWg9NzEMmXjk541BN",
+        "x-cg-demo-api-key": API_KEY, // Use the API key from environment variable
       },
     });
     const data = await response.json();
@@ -36,7 +40,7 @@ app.get("/api/coins/:coinId", async (req, res) => {
   try {
     const response = await fetch(url, {
       headers: {
-        "x-cg-demo-api-key": "CG-TLHDXVQSWg9NzEMmXjk541BN",
+        "x-cg-demo-api-key": API_KEY, // Use the API key from environment variable
       },
     });
     const coinData = await response.json();
@@ -56,7 +60,7 @@ app.get("/api/coins/:coinId/history", async (req, res) => {
   try {
     const response = await fetch(url, {
       headers: {
-        "x-cg-demo-api-key": "CG-TLHDXVQSWg9NzEMmXjk541BN",
+        "x-cg-demo-api-key": API_KEY, // Use the API key from environment variable
       },
     });
     const historyData = await response.json();
