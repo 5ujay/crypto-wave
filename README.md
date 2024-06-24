@@ -1,4 +1,4 @@
-## 📝 Crypto Wave Live crpto tracer
+## 📝 Crypto Wave Live crypto tracer
 
 ### Backend
 
